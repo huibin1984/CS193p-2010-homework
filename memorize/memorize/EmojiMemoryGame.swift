@@ -9,9 +9,9 @@
 import Foundation
 
 class EmojiMemoryGame: ObservableObject {
-    @Published private(set) var game: MemoryGame<String> = createMemoryGame()
+    @Published private var game: MemoryGame<String> = createMemoryGame()
     
-    static func createMemoryGame() -> MemoryGame<String> {
+    private static func createMemoryGame() -> MemoryGame<String> {
         let emojis = ["👻", "🎃", "🕷", "🙈", "🧚‍♀️"]
         let count = Int.random(in: 2...5)
         return MemoryGame(numberOfPairsOfCards: count) { pairIndex in
